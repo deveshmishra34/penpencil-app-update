@@ -7,8 +7,6 @@ declare module "@capacitor/core" {
 }
 
 export interface AppUpdatePluginPlugin {
-    echo(options: { value: string }): Promise<{ value: string }>;
-
 
     /**
      * Get device info

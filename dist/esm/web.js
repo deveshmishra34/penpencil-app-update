@@ -15,10 +15,27 @@ export class AppUpdatePluginWeb extends WebPlugin {
             platforms: ['web']
         });
     }
-    echo(options) {
+    copyAndExtractFile(options) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('ECHO', options);
-            return options;
+            console.log(options);
+            return undefined;
+        });
+    }
+    downloadUpdate(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(options);
+            return undefined;
+        });
+    }
+    getAppInfo() {
+        return __awaiter(this, void 0, void 0, function* () {
+            return undefined;
+        });
+    }
+    updatePref(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(options);
+            return undefined;
         });
     }
 }

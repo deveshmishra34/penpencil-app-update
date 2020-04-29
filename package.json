@@ -1,6 +1,6 @@
 {
   "name": "penpencil-app-update",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "This is for hot update",
   "main": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
