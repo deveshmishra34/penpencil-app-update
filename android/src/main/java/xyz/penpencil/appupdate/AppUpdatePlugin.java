@@ -82,7 +82,7 @@ public class AppUpdatePlugin extends Plugin {
     public void updatePref(PluginCall call) {
         try {
             JSObject jsObject = call.getData();
-            updatePref(prefs, jsObject);
+            updateUserPref(prefs, jsObject);
             call.resolve();
         } catch (Exception e) {
             call.reject("Unable to update pref", e);
@@ -106,7 +106,7 @@ public class AppUpdatePlugin extends Plugin {
             JSObject jsObject = new JSObject();
             jsObject.put("updateUrl", updateUrl);
             jsObject.put("updateStatus", "Live");
-            updatePref(prefs, jsObject);
+            updateUserPref(prefs, jsObject);
 
 //            Notify New Update is ready
             notifyListeners("appUpdateLive", null);
@@ -192,7 +192,7 @@ public class AppUpdatePlugin extends Plugin {
 
                 JSObject jsObject = new JSObject();
                 jsObject.put("updateStatus", "Ready");
-                updatePref(prefs, jsObject);
+                updateUserPref(prefs, jsObject);
 
                 getActivity().unregisterReceiver(onDownloadComplete);
             }
@@ -224,7 +224,7 @@ public class AppUpdatePlugin extends Plugin {
         return jsObject;
     }
 
-    private void updatePref(SharedPreferences prefs, JSObject jsObject) {
+    private void updateUserPref(SharedPreferences prefs, JSObject jsObject) {
         String updateVersion = jsObject.getString("updateVersion");
         String updateStatus = jsObject.getString("updateStatus");
         String updateUrl = jsObject.getString("updateUrl");
